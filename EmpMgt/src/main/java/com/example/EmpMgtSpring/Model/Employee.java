@@ -12,7 +12,7 @@ import javax.persistence.Id;
 public class Employee {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+  private Long id;
   
   @Column(name = "firstname")
   private String firstName;
@@ -33,7 +33,7 @@ public long getId() {
 	return id;
 }
 
-public void setId(long id) {
+public void setId(Long id) {
 	this.id = id;
 }
 
@@ -81,7 +81,7 @@ public Employee() {
 	super();
 }
 
-public Employee(long id, String firstName, String lastName, double salary, String post, String contractType) {
+public Employee(Long id, String firstName, String lastName, double salary, String post, String contractType) {
 	super();
 	this.id = id;
 	this.firstName = firstName;

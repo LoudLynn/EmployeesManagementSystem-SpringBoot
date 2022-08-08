@@ -2,17 +2,18 @@ package com.example.EmpMgtSpring.Controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.EmpMgtSpring.Model.Employee;
 import com.example.EmpMgtSpring.Repository.RepositoryEmployee;
 
-@Controller
+@RestController
 public class ControllerEmployee {	
 
 	 @Autowired
@@ -52,4 +53,14 @@ public class ControllerEmployee {
 			eRepo.deleteById(employeeId);
 			return "redirect:/list";
 		}
+		
+		 @GetMapping("/403")
+		 public String error403() {
+			 return "403";
+		 }
+		 
+		 @GetMapping("/login")
+		 public String loginPage() {
+			 return "login";
+		 }
 }
